@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">NotesApp</string>
+    <string name="add_note">Add Note</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
+    <string name="id">ID</string>
+    <string name="created_date">Created date</string>
+    <string name="edit"><u>Edit</u></string>
+    <string name="save">Save</string>
+    <string name="details">Details</string>
+    <string name="default_toolbar_title"> </string>
+</resources>

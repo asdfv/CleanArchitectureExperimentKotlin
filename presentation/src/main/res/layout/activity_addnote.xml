@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+
+        <variable
+            name="handler"
+            type="by.grodno.vasili.presentation.feature.addnote.AddNoteActivity.NoteHandler"
+            />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        >
+
+        <by.grodno.vasili.presentation.view.ToolbarView
+            android:id="@+id/toolbar_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_height"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:onOkClick="@{() -> handler.save()}"
+            app:title="@{@string/add_note}"
+            />
+
+        <TextView
+            android:id="@+id/title_label"
+            style="@style/note_label_style"
+            android:text="@string/title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_view"
+            />
+
+        <EditText
+            android:id="@+id/title_input"
+            style="@style/note_input_style"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_label"
+            />
+
+        <TextView
+            android:id="@+id/description_label"
+            style="@style/note_label_style"
+            android:text="@string/description"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_input"
+            />
+
+        <EditText
+            android:id="@+id/description_input"
+            style="@style/note_input_style"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/description_label"
+            />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
+

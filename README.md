@@ -1,0 +1,1 @@
+This project is conversion of this repository ti Kotlin - https://github.com/asdfv/CleanArchitectureExperiment

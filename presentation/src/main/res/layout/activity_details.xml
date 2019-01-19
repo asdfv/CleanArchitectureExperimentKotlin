@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+
+        <variable
+            name="note"
+            type="by.grodno.vasili.presentation.model.NoteItem"
+            />
+
+        <variable
+            name="handler"
+            type="by.grodno.vasili.presentation.feature.notedetails.DetailsActivity.Handler"
+            />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <by.grodno.vasili.presentation.view.ToolbarView
+            android:id="@+id/toolbar_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_height"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:onOkClick="@{() -> handler.saveIfChanged()}"
+            app:title="@{@string/details}"
+            />
+
+        <TextView
+            android:id="@+id/id_label"
+            style="@style/details_label"
+            android:text="@string/id"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_view"
+            />
+
+        <TextView
+            android:id="@+id/edit_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:onClick="@{() -> handler.onEditClick()}"
+            android:padding="10dp"
+            android:text="@string/edit"
+            android:textColor="@color/blue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/id_label"
+            />
+
+        <TextView
+            android:id="@+id/id_text"
+            style="@style/details_text"
+            android:text="@{note.id}"
+            app:layout_constraintStart_toStartOf="@id/id_label"
+            app:layout_constraintTop_toBottomOf="@id/id_label"
+            tools:text="_sdfDsds131-"
+            />
+
+        <TextView
+            android:id="@+id/created_label"
+            style="@style/details_label"
+            android:text="@string/created_date"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/id_text"
+            />
+
+        <TextView
+            android:id="@+id/created_text"
+            style="@style/details_text"
+            android:text="@{note.created}"
+            app:layout_constraintStart_toStartOf="@id/created_label"
+            app:layout_constraintTop_toBottomOf="@id/created_label"
+            tools:text="2018-01-02 15:15:15"
+            />
+
+        <TextView
+            android:id="@+id/title_label"
+            style="@style/details_label"
+            android:text="@string/title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/created_text"
+            />
+
+        <EditText
+            android:id="@+id/title_text"
+            style="@style/details_edit_text"
+            android:background="@null"
+            android:text="@{note.title}"
+            app:layout_constraintStart_toStartOf="@id/title_label"
+            app:layout_constraintTop_toBottomOf="@id/title_label"
+            tools:text="Short title"
+            />
+
+        <TextView
+            android:id="@+id/description_label"
+            style="@style/details_label"
+            android:text="@string/description"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_text"
+            />
+
+        <EditText
+            android:id="@+id/description_text"
+            style="@style/details_edit_text"
+            android:text="@{note.description}"
+            app:layout_constraintStart_toStartOf="@id/description_label"
+            app:layout_constraintTop_toBottomOf="@id/description_label"
+            tools:text="Short description"
+            />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
